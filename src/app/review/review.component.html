@@ -1,0 +1,43 @@
+<div class="review-section">
+
+    <!-- Tax Filing Detail -->
+    <div class="section">
+        <h3>Tax Filing Detail</h3>
+        <p><strong>Type of Filing:</strong> {{ taxData.filingType }}</p>
+        <p><strong>VAT Month:</strong> {{ taxData.month }} {{ taxData.year }}</p>
+    </div>
+
+    <!-- Tax Computation -->
+    <div class="section">
+        <h3>Tax Computation</h3>
+        
+        <div class="row">
+            <span class="label">Total value of taxable electronic service exclusive of VAT</span>
+            <span class="amount">{{ taxData.saleAmount | number: '1.2-2' }}</span>
+            <span class="currency">THB</span>
+        </div>
+
+        <div class="row">
+            <span class="label">Total VAT to be remitted</span>
+            <span class="amount">{{ taxData.taxAmount | number: '1.2-2' }}</span>
+            <span class="currency">THB</span>
+        </div>
+
+        <div class="row light-text">
+            <span>(7% of Total value of taxable electronic service exclusive of VAT)</span>
+        </div>
+
+        <div class="row">
+            <span class="label">Total Amount Payable</span>
+            <span class="amount">{{ taxData.taxAmount | number: '1.2-2' }}</span>
+            <span class="currency">THB</span>
+        </div>
+    </div>
+
+    <!-- Declaration -->
+    <div class="section">
+        <h3>Declaration</h3>
+        <p>I hereby certify that information given above are true and correct and agree to be bound by such information.</p>
+    </div>
+
+</div>

@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>Submit Tax Filing</h1>
+  <div class="stepper">
+    <div class="step" [ngClass]="{'completed': view === 'review'}">
+      <div class="circle">1</div>
+      <span class="label">Input Detail</span>
+      <div class="line"></div>
+    </div>
+    <div class="step" [ngClass]="{'active': view === 'review'}">
+      <div class="circle">2</div>
+      <span class="label">Review & Confirm</span>
+    </div>
+  </div>
+
+  <div class="form-detail">
+    <!-- แสดง Filing Type Component -->
+    <div *ngIf="view === 'filingType'">
+      <app-filing-type [taxData]="taxData"></app-filing-type>
+    </div>
+
+    <!-- แสดง Review Component -->
+    <div *ngIf="view === 'review'">
+      <app-review [taxData]="taxData"></app-review>
+    </div>
+  </div>
+
+  <!-- ปุ่ม -->
+  <div class="text-center">
+    <!-- ปุ่มย้อนกลับ -->
+    <button
+      class="btn btn-light"
+      *ngIf="view === 'filingType'"
+      (click)="goToInputDetail()"
+    >
+      Back
+    </button>
+
+    <!-- ปุ่มถัดไป -->
+    <button
+      class="btn btn-dark"
+      *ngIf="view === 'filingType'"
+      (click)="goToReview()"
+    >
+      Next
+    </button>
+
+    <!-- ปุ่มยืนยัน -->
+    <div class="button-submit">
+      <button
+        class="btn btn-dark"
+        *ngIf="view === 'review'"
+        (click)="confirmAndSubmit()"
+      >
+        Confirm and Submit
+      </button>
+    </div>    
+</div>

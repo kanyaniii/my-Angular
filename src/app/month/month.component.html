@@ -1,0 +1,18 @@
+<div class="from-month">
+    <div class="row">
+        <label > Vat Month  <span class="required">*</span></label>
+        <div class="box">
+            <select 
+                class="form-control" 
+                [(ngModel)]="selectedMonth" 
+                (ngModelChange)="onMonthChange($event)"
+                placeholder="Month"
+            >
+                <option *ngFor="let month of months" [value]="month.value">
+                  {{ month.label }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+</div>

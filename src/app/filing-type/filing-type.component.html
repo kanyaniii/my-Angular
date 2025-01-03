@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="form-detail">
+    <div class="form-section">
+      <div class="tax">
+        <h2>1. Tax Filing Detail</h2>
+      </div>
+      <label for="filingType">Type of filing <span class="required">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input
+            type="radio"
+            name="filingType"
+            [value]="'0'"
+            [(ngModel)]="filingType"
+          />
+          <span>Ordinary Filing</span>
+          <span class="tooltip-icon" title="Filing as per regular tax schedule">?</span>
+        </label>
+        <label class="radio-option">
+          <input
+            type="radio"
+            name="filingType"
+            [value]="'1'"
+            [(ngModel)]="filingType"
+          />
+          <span>Additional Filing</span>
+          <span class="tooltip-icon" title="Filing for additional corrections or adjustments">?</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="month">
+        <app-month></app-month> 
+    </div>
+    <div class="year">
+        <app-year></app-year>
+    </div>
+ </div>
+
+  <!-- แสดง Sale Amount Component -->
+  <div *ngIf="filingType === '0'">
+    <app-sale-amount></app-sale-amount>
+  </div>
+
+  <!-- แสดง Total Amount Component -->
+  <div *ngIf="filingType === '1'">
+    <app-total-amount></app-total-amount>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="form-section">
+    <div class="from-tax">
+        <h2>2. Tax Computation</h2>
+        <button type="button" class="btn btn-link">
+            View Exchange Rate
+        </button>
+    </div>
+    <label class="h">
+       Provide total  value texable electronic service
+        <span class="required">*</span>
+    </label>
+
+    <div class="total-vat">
+        <div class="">
+            <label for="taxableValue">
+                1. Provide total  value texable electronic service exclusive of VAT
+            </label>
+            <input
+                type="text"
+                id="taxableValue"
+                class="input col-3"
+                placeholder="THB"
+                [(ngModel)]="priceAmount"
+                (focus)="removeComma()"
+                (blur)="calculateVatAndFormat()"
+            />
+        </div>
+        <div class="">
+            <label for="totalVAT">
+                2. Total VAT to be remitted  (7% of 1.)
+            </label>
+            <input
+                type="text"
+                id="totalVAT"
+                class="input col-3"
+                [value]="vatAmount && vatAmount !== 0 ? (vatAmount | number: '1.2-3') : ''"
+                placeholder="THB"
+                readonly
+                />
+        </div>
+    </div>
+</div>

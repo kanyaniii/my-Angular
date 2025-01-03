@@ -1,0 +1,74 @@
+<div class="form-section">
+  <div class="from-tax">
+    <h2>2. Tax Computation</h2>
+    <button type="button" class="btn btn-link">View Exchange Rate</button>
+  </div>
+
+  <label class="d">Provide total value taxable electronic service <span class="required">*</span></label>
+
+  <div class="total-vat">
+    <div>
+      <label for="taxableValue">1. Provide total value taxable electronic service exclusive of VAT</label>
+      <input
+        type="text"
+        id="taxableValue"
+        class="input col-3"
+        placeholder="THB"
+        [(ngModel)]="priceAmount"
+        (focus)="removeComma()"
+        (blur)="calculateVatAndFormat()"
+        
+      />
+    </div>
+    <div>
+      <label for="editableTaxAmount">2. Total VAT to be remitted (7% of 1.)</label>
+      <input
+        type="text"
+        id="totalVAT"
+        class="input col-3"
+        [value]="vatAmount && vatAmount !== 0 ? (vatAmount | number: '1.2-3') : ''"
+        placeholder="THB"
+        readonly
+      />
+    </div>
+  </div>
+
+  <div class="late-filling">
+    <label class="d">In case of late filling and payment, or additional filling</label>
+    <div>
+      <label for="surcharge">3. Surcharge</label>
+      <span class="tooltip-icon" title="Filing as per regular tax schedule">?</span>
+      <input
+        type="text"
+        id="surcharge"
+        class="input col-3"
+        placeholder="0.00 THB"
+        [value]="surchargeAmount | number: '1.2-2'"
+        readonly
+      />
+    </div>
+    <div>
+      <label for="penalty">4. Penalty</label>
+      <span class="tooltip-icon" title="Filing as per regular tax schedule">?</span>
+      <input
+        type="text"
+        id="penalty"
+        class="input col-3"
+        placeholder="0.00 THB"
+        [value]="penaltyAmount | number: '1.2-2'"
+        readonly
+      />
+    </div>    
+    <div>
+      <label for="totalAmount">5. Total amount of VAT, surcharge, and penalty to be remitted (2.+3.+4.)</label>
+      <input
+        type="text"
+        id="totalAmount"
+        class="input col-3"
+        placeholder="0.00 THB"
+        [value]="totalAmount | number: '1.2-2'"
+        readonly
+      />
+    </div>
+  </div>
+</div>

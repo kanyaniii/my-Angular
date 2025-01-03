@@ -1,0 +1,208 @@
+.container {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    min-height: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; 
+  }
+
+  
+.form-detail {
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    min-height: 200px; /* กำหนดความสูงขั้นต่ำ */
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; /* เพิ่มเอฟเฟกต์เปลี่ยนความสูงอย่างนุ่มนวล */
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold; /* ทำให้ตัวอักษรหนาขึ้น */
+    display: block; /* เปลี่ยนจาก none เป็น block */
+}
+
+
+//stepper
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+//2
+.step {
+  display: flex;
+  flex-direction: column; /* จัดเรียงเนื้อหาในแนวตั้ง */
+  align-items: center;
+  position: relative;
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  margin-left: 30px;
+}
+
+//เลข
+.step .circle {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+//1
+.step.active .circle {
+  border-color: #000;
+}
+
+//ตัวหนังสือ
+.step .label {
+  margin-top: 5px; /* เพิ่มระยะห่างระหว่างวงกลมและข้อความ */
+  color: #666;
+  font-size: 12px; /* ลดขนาดข้อความเล็กน้อย */
+  white-space: nowrap; /* ป้องกันการตัดคำ */
+}
+
+.step.active .label {
+  color: #000;
+}
+
+.step .line {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background-color: #ccc;
+  top: 30%;  /* ปรับเส้น */
+  left: calc(50% + 15px); /* ปรับตำแหน่งเส้น */
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.step:last-child .line {
+  display: none;
+}
+
+/* Step ทั่วไป */
+.step.completed .label {
+  color: #000; /* ข้อความ Input Detail เป็นสีดำ */
+}
+
+/* วงกลมของ Input Detail เมื่อถึง Review Component */
+.step.completed .circle {
+  background-color: #000; /* พื้นหลังสีดำ */
+  color: #fff; /* ตัวเลขสีขาว */
+  border-color: #000; /* ขอบสีดำ */
+}
+
+.form-section{
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+  }
+  
+.form-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1.5px solid #DCDCDC; /* เส้นใต้ข้อความ */
+    font-weight: bold; 
+  }
+
+  .form-section hr {
+    border: 0;
+    margin: 10px 0;
+  }
+
+.btn {
+    border-radius: 20px; /* มุมโค้ง */
+    font-weight: 200; /* ความหนาของตัวอักษร */
+    margin-right: 10px; /* ระยะห่างด้านขวาของปุ่ม (ระหว่างปุ่ม) */
+    margin-bottom: 10px;
+    width: 8%;
+    font-size: 15px;
+    margin-top: 22px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.button-submit {
+  display: flex; /* ใช้ flexbox เพื่อจัดการ layout */
+  justify-content: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.btn-light, .btn-dark {
+  width: 200px; /* กำหนดความกว้างของปุ่มทั้งสองให้เท่ากัน */
+  padding: 12px 24px; /* เพิ่มความสูงและความกว้าง */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  border-radius: 20px; /* มุมโค้ง */
+  transition: all 0.3s ease-in-out; /* เพิ่มเอฟเฟกต์การเปลี่ยน */
+}
+
+.btn-light {
+  background-color: #f8f9fa; /* พื้นหลังขาว */
+  color: #000; /* ข้อความดำ */
+  border: 2px solid #000; /* เส้นขอบดำ */
+}
+
+.btn-dark {
+  background-color: #000; /* พื้นหลังสีดำ */
+  color: #fff; /* ตัวอักษรสีขาว */
+  border: none;
+}
+
+.btn-light:hover {
+  background-color: #e2e6ea; /* เปลี่ยนสีเมื่อ hover */
+}
+
+.btn-dark:hover {
+  background-color: #333; /* เปลี่ยนสีเมื่อ hover */
+}
+
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+/* ปุ่มยืนยัน */
+.button-submit {
+  display: flex; /* ใช้ flexbox เพื่อจัดการ layout */
+  justify-content: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+  margin-top: 5px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.btn-dark {
+  background-color: #000; /* พื้นหลังสีดำ */
+  color: #fff; /* ตัวอักษรสีขาว */
+  padding: 12px 24px; /* เพิ่มความสูงและความกว้าง */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  border-radius: 20px; /* มุมโค้ง */
+  border: none;
+  cursor: pointer;
+  width: 200px; /* ความกว้างเฉพาะปุ่ม */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  transition: all 0.3s ease-in-out; /* เพิ่มเอฟเฟกต์การเปลี่ยน */
+}
+
+.btn-dark:hover {
+  background-color: #333; /* เปลี่ยนสีเมื่อ hover */
+}
+
+
+
+
+
+
+
