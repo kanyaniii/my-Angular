@@ -1,27 +1,63 @@
-# BimbimAngular
+# Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.19.
+Angular เป็นเฟรมเวิร์กที่มีประสิทธิภาพสำหรับการสร้างแอปพลิเคชันเว็บที่ทันสมัย ด้วยความสามารถในการจัดการส่วนประกอบต่างๆ เช่น คอมโพเนนต์, เซอร์วิส, โมดูล, และการใช้ Angular CLI เพื่อช่วยในการพัฒนาและจัดการโปรเจค Angular ได้ง่ายขึ้น การใช้งาน Angular ช่วยให้สามารถสร้างแอปพลิเคชันที่สามารถขยายขนาดได้และรักษาความเป็นระเบียบในการพัฒนาแอป version 11.2.19.
 
-## Development server
+# การเริ่มต้นใช้งาน
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 1.ติดตั้ง Angular CLI Version 11.2.19
+ก่อนอื่นต้องติดตั้ง Node.js และ npm ให้พร้อมใช้งาน จากนั้นติดตั้ง Angular CLI โดยการรันคำสั่งนี้:
 
-## Code scaffolding
+Run `npm install -g @angular/cli@11.2.19`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 2.ตรวจสอบเวอร์ชันที่ติดตั้ง
+หลังจากติดตั้งเสร็จแล้ว คุณสามารถตรวจสอบว่า Angular CLI ติดตั้งเวอร์ชัน 11.2.19 หรือไม่ โดยการรันคำสั่งนี้ในคอมมานด์ไลน์:
+Run `ng version`
 
-## Build
+## 3.สร้างโปรเจค Angular ใหม่
+หลังจากติดตั้ง Angular CLI แล้ว ให้สร้างโปรเจค Angular ใหม่ด้วยคำสั่ง:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng new my-angular-app`
 
-## Running unit tests
+## 4.รันแอปพลิเคชัน
+หลังจากสร้างโปรเจคเสร็จแล้ว ให้เข้าไปในไดเรกทอรีของโปรเจคและเริ่มเซิร์ฟเวอร์การพัฒนา:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `cd my-angular-app`
+Run `ng serve`
 
-## Running end-to-end tests
+แอปพลิเคชันจะพร้อมใช้งานที่ http://localhost:4200/
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## 5. สร้างคอมโพเนนต์, เซอร์วิส, ฯลฯ
+สามารถสร้างคอมโพเนนต์ใหม่, เซอร์วิส, หรือโมดูลด้วยคำสั่ง ng generate เช่น:
 
-## Further help
+Run `ng generate component my-component`
+Run `ng generate service my-service`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 6. สร้างคอมโพเนนต์, เซอร์วิส, ฯลฯ
+เมื่อแอปพลิเคชันพร้อมใช้งานในโปรดักชันแล้ว ให้สร้างแอปเพื่อใช้งานในสภาพแวดล้อมการผลิต:
+Run `ng build --prod`
+
+# คำสั่งทั่วไปของ Angular
+
+## สร้างโปรเจคใหม่
+
+Run `ng new <project-name>` 
+
+## รันแอปพลิเคชัน
+
+Run `ng serve` 
+
+## สร้างคอมโพเนนต์ใหม่
+
+Run `ng generate component <component-name>` 
+
+## สร้างโปรเจคสำหรับการผลิต
+
+Run `ng build --prod` 
+
+## รันการทดสอบหน่วย (unit test)
+
+Run `ng test` 
+
+## รันการทดสอบแบบ end-to-end (e2e test)
+
+Run `ng e2e` 
